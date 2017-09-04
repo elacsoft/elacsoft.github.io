@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Project Code</title>
+</head>
+<body>
+<img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKOmNgKIPb8sg-DAd8NmeaOeHXfcZ1lUvFzzE6jq6vKBvUmJ7UBA">
+<p>By Syed Owais Chishti<br>ELab<br><br></p>
+<p>Code to be compiled in Raspberry Pi terminal:<br><br>
+git clone git://git.drogon.net/wiringPi<br>
+cd wiringPi<br>
+git pull origin<br>
+cd wiringPi ./build<br><br>
+Now test wiringPi installation with<br><br>
+cd wiringPi ./build<br>
+<br>
+ sudo apt-get update<br>
+sudo apt-get install apache2 apache2-doc apache2-utils<br>
+sudo apt-get install libapache2-mod-php5 php5 php-pear php5-xcache<br>
+ cd /var/www/ sudo nano switch.php<br><br>
+In nano window paste this code:<br><br>
+<?php<br>
+// (c) 2015  Syed owais chishti<br>
+$output = shell_exec('gpio mode '.$_GET['pin'].' out');<br>
+$output = shell_exec('gpio write '.$_GET['pin'].' '.$_GET['switch']);<br>
+echo $_GET['status'];<br>
+$output = shell_exec('gpio read 8');<br>
+echo "GPIO 2:".$output;<br>
+$output = shell_exec('gpio read 9');<br>
+echo "GPIO 3:".$output;<br>
+$output = shell_exec('gpio read 7');<br>
+echo "GPIO 4:".$output;<br>
+$output = shell_exec('gpio read 11');<br>
+echo "GPIO 7:".$output;<br>
+$output = shell_exec('gpio read 10');<br>
+echo "GPIO 8:".$output;<br>
+$output = shell_exec('gpio read 13');<br>
+echo "GPIO 9:".$output;<br>
+$output = shell_exec('gpio read 12');<br>
+echo "GPIO 10:".$output;<br>
+$output = shell_exec('gpio read 14');<br>
+echo "GPIO 11:".$output;<br>
+$output = shell_exec('gpio read 0');<br>
+echo "GPIO 17:".$output;<br>
+$output = shell_exec('gpio read 1');<br>
+echo "GPIO 18:".$output;<br>
+$output = shell_exec('gpio read 3');<br>
+echo "GPIO 22:".$output;<br>
+$output = shell_exec('gpio read 4');<br>
+echo "GPIO 23:".$output;<br>
+$output = shell_exec('gpio read 5');<br>
+echo "GPIO 24:".$output;<br>
+$output = shell_exec('gpio read 6');<br>
+echo "GPIO 25:".$output.;<br>
+$output = shell_exec('gpio read 2');<br>
+echo "GPIO 27:".$output;<br>
+$output = shell_exec('gpio read 15');<br>
+echo "UART TX:".$output;<br>
+$output = shell_exec('gpio read 16');<br>
+echo "UART RX:".$output;<br>
+?><br><br>
+
+LIVE VIDEO STREAMING:<br><br>
+raspivid -n -ih -t 0 -rot 0 -w 1280 -h 720 -fps 15 -b 1000000 -o - | nc -lkv4 5001<br>
+
+</body>
+<form>
+<a style="color: blue" href="RPi_app_code.html" target="_blank"><input type="button" value="Android codes" /></a></form>
+</html>

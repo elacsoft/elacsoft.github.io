@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Arduino Code</title>
+</head>
+
+<body background="data:image/jpeg;base64,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"></body>
+<span style="color: red"><h1><b>By Syed Owais Chishti<br>E-Lab</b></h1><br></span>
+<p><h4><i>follow the instructions below</i></h4></p><br>
+<p><b>#include "ESP8266WiFi.h"<br>
+ // use greater and less than signs sign instead of quotes above in library.<br>
+const char* ssid = "SSID";<br>
+//enter your ssid above in quotes<br>
+const char* password = "password"; <br>
+//enter your password above in quotes.
+WiFiServer server(80); //to initiliase webserver at port 80.<br> 
+void setup() {<br>
+Serial.begin(115200);<br>
+  delay(10);<br>
+  Serial.println(ssid);<br>
+  WiFi.begin(ssid, password);//connecting to your router<br>
+  while (WiFi.status() != WL_CONNECTED) {<br>
+    delay(500);<br>
+  }<br>
+  server.begin();//initialise server<br>
+  Serial.println(WiFi.localIP());<br>
+}<br>
+void loop() {<br>
+  WiFiClient client = server.available();//if connected to server<br>
+  client.println("ESP AVAILABLE");<br>
+  if (!client) {//server should be client<br>
+    return;<br>
+  }<br>
+  while(!client.available()){//if server is not connected then<br>
+    delay(1);wait to connect<br>
+  }<br>
+  String request = client.readStringUntil('\r');<br>
+  Serial.println(request);<br>
+  client.flush();<br>
+  client.println("HTTP/1.1 200 OK");<br>
+  client.println("Content-Type: text/html");<br>
+  client.println(""); //  do not forget this one<br>
+  delay(1);<br>
+  // above 8 lines are server setup html commands.
+}</b></p><br>
+<br><br>
+<form>
+<input type="button" onclick="myFunction()" value='Click to see connections' /></form>
+<script type='text/javascript'>
+function myFunction() {
+	document.write("connect Vcc of ESP to Arduino 3.3V, never connect it to 5V");
+	document.write("<br>");
+	document.write("GND to Arduino Ground");
+	document.write("<br>");
+	document.write("connect Tx to arduino Tx");
+	document.write("<br>");
+	document.write("connect Rx to arduino Rx");
+	document.write("<br>");
+	document.write("connect CH_PD(chip enable) to VCC");
+	document.write("<br>");
+	document.write("connect RST(reset) to arduino VCC");
+	document.write("<br>");
+	document.write("in above VCC means 3.3V");
+	document.write("<br>");
+	document.write("<br>");
+	document.write("NOW PAY FOCUS");
+	document.write("<br>");document.write("<br>");
+	document.write("connect arduino reset pin to ground always");
+	document.write("<br>");
+	document.write("connect GPIO0 to ground while programming ESP, when program is uploaded disconnect power and connect GPIO0 to VCC(3.3V) then power the arduino");
+	document.write("<br>");
+	document.write("that means 'GPIO0 to GND for programming and to VCC for normal operation'");
+	document.write("<br>");
+	document.write("use Fing app(from play store)or simply search for new WLAN IP on your cmd prompt");
+	document.write("<br>");
+	document.write("Enter that IP in app and ENJOY!");
+	document.write("<br>");
+}
+	</script>
+	
+	</html>

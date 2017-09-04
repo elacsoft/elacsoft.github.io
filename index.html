@@ -2,63 +2,86 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>MPPT HCS</title>
+	<title>ElacSoft</title>
 	<style>
+	div.banner {  color: red; }
 		h1 {
 			color: red;
 		}
 		p {
 			margin: 1rem;
 		}
+		body { 
+    background-repeat: no-repeat;
+    background-attachment: fixed;background-size: 100% 100%
+}
 	</style>
+	<img src="logo.png" width="200px">
 </head>
-<body background="data:image/jpeg;base64,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"></body>
-
-<h1>&Sopf;&yopf;&eopf;&dopf; &Oopf;&wopf;&aopf;&iopf;&sopf; &Copf;&hopf;&iopf;&sopf;&hopf;&topf;&iopf;</h1><h1>&Eopf;-&Lopf;&Aopf;&Bopf;</h1><br><br>
+<body background="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2YVj7xSN1r_f10inEAwmULtE3iuYRk648uaTdu8ocFAFZpCRd" /></body>
+<blockquote><hr>
+<h1>&Sopf;&yopf;&eopf;&dopf; &Oopf;&wopf;&aopf;&iopf;&sopf; &Copf;&hopf;&iopf;&sopf;&hopf;&topf;&iopf;</h1><h1>'&Eopf;' &Lopf;&Aopf;&Copf; &Sopf;&Oopf;&Fopf;&Topf;</h1><hr></blockquote><br><br>
+<audio src="27755175.mp3" controls autoplay>
+  Your browser does not support the audio file.
+</audio><br><br>
 
 <details>
-       <summary>Contact Details</summary>
-       <blockquote>
-<a href="mailto:sowais672@gmail.com">sowais672@gmail.com</a></blockquote>
-       <p>0313-2609629</p>
-       <p>For more details be fast to grab an <mark>APPOINTMENT</mark></p>
+      <summary style="color: blue">Contact Details</summary>
+       <ul style="color: yellow">
+      <li><blockquote>
+<a href="mailto:sowais672@gmail.com">sowais672@gmail.com</a></blockquote></li>
+ <li> <p style="color: yellow">0313-2609629</p></li></ul>
+      <p style="color: yellow">For more details be fast to grab an <mark>APPOINTMENT</mark></p>
     </details><br><br>
+ <div class="banner">
+ 	<details>
+      <summary style="color: blue">About 'E' LAC SOFT</summary><ul>
+      <li><p><h4>We provide help and services in following</h4></p></li>
+      <li><p><h2>Electronics</h2></p></li>
+      <li><p><h4>Arduino programming</h4></p></li>
+      <li><p><h4>Libraries and sketches</h4></p></li>
+      <li><p><h4>Raspberry Pi programming</h4></p></li>
+      <li><p><h4>FPGA Programming</h4></p></li>
+      <li><p><h4>Logic Designing</h4></p></li>
+      <li><p><h4>IC Manufacturing</h4></p></li>
+      <li><p><h4>PLC and HMI programming</h4></p></li>
+      <li><p><h4>Delta,AllenBradley,Omron,Siemens,Fatek,Xinje,Mitsubishi,Advance,Advantech<br>All models of above PLC's and HMI's</h4></p></li>
+      <li><p><h4>ESP8266 and NodeMCU programming</h4></p></li>
+      <li><p><h4>VFD programming</h4></p></li>
+      <li><p><h2>Software and electronics</h2></p></li>
+      <li><p><h4>IoT</h4></p></li>
+      <li><p><h4>Php programming</h4></p></li>
+      <li><p><h4>Javascript programming</h4></p></li>
+      <li><p><h4>HTML5 and CSS3 programming</h4></p></li>
+      <li><p><h4>SQL programming</h4></p></li>
+      <li><p><h4>Web Server development with Apache, XAMPP, PHP etc</h4></p></li>
+      <li><p><h4>Blynk Servers</h4></p></li>
+      <li><p><h4>Website development, designing and Hosting</h4></p></li>
+      <li><p><h4>Android Studio for Android app development</h4></p></li>
+      <li><p><h4>Java for Android app development</h4></p></li>
+      <li><p><h4>Objective C and Swift for IOS app development</h4></p></li>
+      <li><p><h4>Port Forwarding</h4></p></li>
+      <li><p><h4>MATLAB and Simulink</h4></p></li>
+      <li><p><h4>LabView</h4></p></li>
+      <li><p><h4>Image Processing with Python and MATLAB</h4></p></li>
+      <li><p><h4>Python 2 and 3</h4></p></li>
+      <li><p><h4>C, C++, C# programming</h4></p></li>
+      <li><p><h4>Linux Programming</h4></p></li>
+      <li><p><h4>Ethical hacking using Kali Linux</h4></p></li><br><br>
+      <p><h2>The Best Part is I individually have used all above listed items in different Applications, platforms and projects. I am in <mark>final semester of B.E Electronics from NEDUET</mark> but due to two(2) jobs between my academy life namely<li>ILES Interprises</li><br>and present one<br><li>E-Lab Pakistan</li> give me a lot of experience and hands on work in <mark>BOTH</mark> Electronics and Software Industries.<br>
+      <mark>THAT IS THE REASON MY WEBSITE NAME IS 'E' LAC SOFT, WHICH MEANS IF LESS OR NO RESOURCES FOR ELECTRONICS MIX SOFTWARE TO BE SUCCEDED AND REALLY INTERNATIONALLY SOFTWARE IS A PART OF ELECTRONICS<br>DON'T BLAM CHOOSE PATH</mark></h2></p></ul></details>
+ </div><br><br> 
+<form>
+<a style="color: blue" href="MPPT_HCS_DFIG_WT.html" target="_blank"><input type="button" value="MPPT with DFIG Wind Turbine, HCS Algorithm" /></a></form><br><br>
 
-<audio src="http://www.fromtexttospeech.com/output/0101782001504138365/27608434.mp3" controls autoplay>
-  Your browser does not support the audio file.
-</audio><br><br><br>
-
-<a href="#sol" target="_self"><input type="button" value="Directly jump to solution" /></a></form>
-
-<span style="color:darkblue"><p><h3><i>"The vidoe below is <mark>ONLY</mark> for understanding the outputs of modules with and without MPPT"</i></h3></p><br></span><br>
-
-<iframe width="854" height="480" src="https://www.youtube.com/embed/Auk9jU3Ee4M" frameborder="0" allowfullscreen></iframe><br><br>
-
-
-<span style="color:darkblue"><p><h2><i>Follow the instructions as described:</i></h2></p><br></span><br>
-
-<ul>
-<li><span style="color:darkblue"><p><h3><i>STEP # 1:<br>Open the files attached with the mail with .SLX format</i></h3></p><br></span></li>
-
-<li><span style="color:darkblue"><p><h3><i>STEP # 2:<br>Type this command</i></h3></p><br></span></li>
-<p><h3><i>>>power_wind_dfig_det</i></h3></p><br>
-<p><h3>A window of DFIG model will open just close it, We only need the values of .mat file it composed of</h3></p>
-
-<li><span style="color:darkblue"><p><h3><i>STEP # 3:<br>Now type these commands</i></h3></p><br></span></li>
-<p><h3>>>set_param('MPPT_GO','AlgebraicLoopSolver','LineSearch')</h3></p>
-<p><h3>>>set_param('withoutMPPT','AlgebraicLoopSolver','LineSearch')</h3></p>
-
-<li><span style="color:darkblue"><p><h3><i>STEP # 4:<br>Now open Simulink and open your both .slx files</i></h3></p><br></span></li>
-<p><h3>Run and simulate both models</h3></p>
-</ul><br><br><br><br>
-<article id="sol">
-      <header><hr>
-        <h2>IMPACT OF MPPT</h2>
-        <h3>Let's discuss the impacts of MPPT as follows</h3>
-      </header>
-      <p><h4>After completing the steps above, Run withoutMPPT.slx and observe second window of scope the peak first reach to the maximum output of wind turbine then it fluctuates due to changes in<br> <ul><li>Wind</li><li>Pitch</li><li>etc..</li></ul> in our case its max value is around 4000 to 5000 watt.<br>Then open MPPT_GO and observe second window again now there is a shoot due to startup conditions and after very few time the output gets stable at its max value that is 4000-5000 watt.<br>This is an impact of MPPT.</p></h4><br><br><p><h4>To understand the pictural phenomena have a look at this picture below</h4></p><br><br><img src="https://www.researchgate.net/profile/Jagdish_Kumar10/publication/261380648/figure/fig5/AS:399183631667201@1472184202082/Fig-10-FFT-spectrum-of-Incremental-Conductance-MPPT-algorithm.ppm"><br><br><p><h4>In picture above a spike is shown in second window of scope which first reach to max value then drop down in case of no MPPT<br><br>Where as in first window of scope the output is stable around max value with the help of MPPT</h4></p><hr>
-    </article><br><br><br>
-
-
-
+<form>
+<a style="color: blue" href="basics.html" target="_blank"><input type="button" value="Controlling GPIOs of RPi 3 with Android app and run time video streaming" /></a></form><br><br>
+<form>
+<a style="color: blue" href="Arduin_code.html" target="_blank"><input type="button" value="Wifi control and acqusition for ESP826 Generic module with android App" /></a></form><br><br>
+<form>
+<a style="color: blue" href="" target="_self"><input type="button" value="NRF24L01 module Walkie Talkie system for 6 sets and with choose control" /></a></form><br><br>
+<form>
+<a style="color: blue" href="POWER_JERKS.html" target="_blank"><input type="button" value="Electric Jerks and Remedies" /></a></form><br><br>
+<form>
+<a style="color: blue" href="" target="_self"><input type="button" value="Return to TOP" /></a></form><br><br>
 </html>
